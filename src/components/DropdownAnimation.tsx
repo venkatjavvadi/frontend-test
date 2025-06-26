@@ -29,7 +29,7 @@ const DropdownAnimation: React.FC = () => {
       title: "Who else",
       content: (
         <>
-        <a href="#" className="text-blue-500 underline">@Someone else</a> Lorem Indeed! 
+          <a href="#" className="text-blue-500 underline">@Someone else</a> Lorem Indeed!
         </>
       ),
       icons: ['diamond']
@@ -81,7 +81,7 @@ const DropdownAnimation: React.FC = () => {
             </div>
           </div>
         ) : (
-          <div className="px-4 pb-4 pt-2 bg-gray-200 divide-y divide-red-200">
+          <div className="px-4 pb-4 pt-2 bg-gray-200 divide-y divide-red-200 ">
             {cardData.map((data, index) => (
               <ListItem key={index} title={data.title} content={data.content} iconToShow={data.icons} />
             ))}
@@ -106,27 +106,27 @@ const ListItem: React.FC<ListItemProps> = ({ title, content, iconToShow }) => {
       <div className="flex items-start">
         <div className="w-8 h-8 bg-red-500 rounded-md flex-shrink-0 mr-3"></div>
         <div>
-          <h3 className="text-large font-bold text-gray-800 mb-1">{title}</h3>
+          <h3 className="text-large font-bold text-gray-800">{title}</h3>
           <p className="text-gray-600 text-justify">{content}</p>
         </div>
       </div>
       {iconToShow && iconToShow.length > 0 && (
-            <div className="flex space-x-2 ml-10 mt-2">
-              {iconToShow.map((iconType, index) => (
-                <button key={index} className="flex items-center justify-center w-8 h-8 bg-gray-300 rounded-md hover:bg-gray-400">
-                  {iconType === 'diamond' ? (
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF000080" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2L2 12L12 22L22 12L12 2Z"/>
-                    </svg>
-                  ) : (
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF000080" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="2" y="2" width="20" height="20" rx="3" ry="3"/>
-                    </svg>
-                  )}
-                </button>
-              ))}
-            </div>
-          )}
+        <div className="flex space-x-2 ml-10 mt-2">
+          {iconToShow.map((iconType, index) => (
+            <button key={index} className="flex items-center justify-center w-8 h-8 bg-gray-300 rounded-md hover:bg-gray-400">
+              {iconType === 'diamond' ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF000080" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 12L12 22L22 12L12 2Z" />
+                </svg>
+              ) : (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#FF000080" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="2" width="20" height="20" rx="3" ry="3" />
+                </svg>
+              )}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
