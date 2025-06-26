@@ -1,14 +1,17 @@
 import React from "react";
 import DropdownAnimation from "./components/DropdownAnimation";
 import ThemeColor from "./components/ThemeColor";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-const App = () => {
+const App: React.FC = () => {
   return (
-    <>
-      {/* <DropdownAnimation /> */}
-      <ThemeColor />
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/dropdown" element={<DropdownAnimation />} />
+        <Route path="/themecolor" element={<ThemeColor />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
